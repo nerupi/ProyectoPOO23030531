@@ -42,5 +42,6 @@ namespace ProyectoPOO23030531
             x.Owner = this;
             x.Show();
         }
+
     }
 }

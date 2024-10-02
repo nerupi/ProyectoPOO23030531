@@ -11,20 +11,24 @@
         <Label Content="Nombre" HorizontalAlignment="Left" Height="26" Margin="108,99,0,0" VerticalAlignment="Top" Width="77"/>
         <Label Content="Descripción" HorizontalAlignment="Left" Height="26" Margin="108,142,0,0" VerticalAlignment="Top" Width="77"/>
         <Label Content="Imagen" HorizontalAlignment="Left" Height="28" Margin="108,260,0,0" VerticalAlignment="Top" Width="77"/>
-        <TextBox x:Name="txtID" HorizontalAlignment="Left" Height="18" Margin="204,66,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="82"/>
+        <TextBox x:Name="txtID" HorizontalAlignment="Left" Height="18" Margin="204,66,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="82" MaxLength="15"/>
         <Image HorizontalAlignment="Left" Height="80" Margin="326,240,0,0" VerticalAlignment="Top" Width="80"/>
         <TextBox x:Name="txtNombre" HorizontalAlignment="Left" Height="18" Margin="204,103,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="196"/>
         <TextBox x:Name="txtDescripción" HorizontalAlignment="Left" Height="89" Margin="204,146,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="279"/>
-        <Image HorizontalAlignment="Left" Height="126" Margin="204,260,0,0" VerticalAlignment="Top" Width="158"/>
         <ToolBar HorizontalAlignment="Left" Height="31" Margin="10,21,0,0" VerticalAlignment="Top" Width="153">
-            <Button Height="23" Width="26">
+            <Button x:Name="btngrabar" Height="22" Width="23" Click="btngrabar_Click">
                 <Button.Background>
-                    <ImageBrush ImageSource="/Datos/basura.png"/>
+                    <ImageBrush ImageSource="/Datos/guardar icon.png"/>
                 </Button.Background>
             </Button>
             <Button x:Name="btnbuscar" Height="29" Width="29" HorizontalAlignment="Left" Click="btnbuscar_Click">
                 <Button.Background>
                     <ImageBrush ImageSource="/Datos/lupa.png"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="btnbasura" Height="23" Width="25" Click="btnbasura_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Datos/basura.png"/>
                 </Button.Background>
             </Button>
         </ToolBar>
@@ -37,6 +41,7 @@
             </MenuItem>
             <MenuItem Header="Salir"/>
         </Menu>
+        <Image HorizontalAlignment="Left" Height="126" Margin="204,260,0,0" VerticalAlignment="Top" Width="158"/>
 
     </Grid>
 </Window>

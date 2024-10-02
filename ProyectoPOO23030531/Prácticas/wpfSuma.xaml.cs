@@ -31,7 +31,6 @@ namespace ProyectoPOO23030531.Prácticas
             op.Valor2 = decimal.Parse(txtvalor2.Text);
             txtresultados.Text = op.suma().ToString();
         }
-
         private void txtvalor1_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key >= Key.D0 && e.Key <= Key.D9 || e.Key == Key.Decimal || e.Key == Key.OemPeriod || e.Key >= Key.NumPad0 && e.Key <= Key.NumPad9)
@@ -56,6 +55,33 @@ namespace ProyectoPOO23030531.Prácticas
                 MessageBox.Show("Introduzca valores numéricos");
                 e.Handled = true;
             }
+        }
+
+        private void btnresta_Click(object sender, RoutedEventArgs e)
+        {
+            clOperaciones op = new clOperaciones();
+            //op = new clOperaciones(decimal.Parse(txtvalor1.Text), Convert.ToDecimal(txtvalor2.Text));
+            op.Valor1 = decimal.Parse(txtvalor1.Text);
+            op.Valor2 = decimal.Parse(txtvalor2.Text);
+            txtresultados.Text = op.resta().ToString();
+        }
+
+        private void btnmultiplica_Click(object sender, RoutedEventArgs e)
+        {
+            clOperaciones op = new clOperaciones();
+            //op = new clOperaciones(decimal.Parse(txtvalor1.Text), Convert.ToDecimal(txtvalor2.Text));
+            op.Valor1 = decimal.Parse(txtvalor1.Text);
+            op.Valor2 = decimal.Parse(txtvalor2.Text);
+            txtresultados.Text = op.multiplicacion().ToString();
+        }
+
+        private void btndivision_Click(object sender, RoutedEventArgs e)
+        {
+            clOperaciones op = new clOperaciones();
+            //op = new clOperaciones(decimal.Parse(txtvalor1.Text), Convert.ToDecimal(txtvalor2.Text));
+            op.Valor1 = decimal.Parse(txtvalor1.Text);
+            op.Valor2 = decimal.Parse(txtvalor2.Text);
+            txtresultados.Text = op.division().ToString();
         }
     }
 }

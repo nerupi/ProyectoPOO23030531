@@ -21,8 +21,8 @@
         <Label x:Name="Valor2" Content="Valor 2" HorizontalAlignment="Left" Height="25" Margin="49,91,0,0" VerticalAlignment="Top" Width="55" Grid.Column="1"/>
         <Label x:Name="Resultado" Content="Resultado" HorizontalAlignment="Left" Height="26" Margin="49,130,0,0" VerticalAlignment="Top" Width="66" Grid.Column="1"/>
         <Button x:Name="btnsuma" Content="Suma" HorizontalAlignment="Left" Height="18" Margin="53,180,0,0" VerticalAlignment="Top" Width="46" Click="btnsuma_Click" Grid.Column="1"/>
-        <Button x:Name="btnresta" Content="Resta" HorizontalAlignment="Left" Height="17" Margin="132,180,0,0" VerticalAlignment="Top" Width="46" Grid.Column="1"/>
-        <Button x:Name="btnmultiplica" Content="Multiplicación" HorizontalAlignment="Left" Height="18" Margin="205,180,0,0" VerticalAlignment="Top" Width="83" Grid.ColumnSpan="2" Grid.Column="1"/>
-        <Button x:Name="btndivision" Content="División" HorizontalAlignment="Left" Height="18" Margin="30,180,0,0" VerticalAlignment="Top" Width="46" Grid.Column="2" Grid.ColumnSpan="2"/>
+        <Button x:Name="btnresta" Content="Resta" HorizontalAlignment="Left" Height="17" Margin="132,180,0,0" VerticalAlignment="Top" Width="46" Grid.Column="1" Click="btnresta_Click"/>
+        <Button x:Name="btnmultiplica" Content="Multiplicación" HorizontalAlignment="Left" Height="18" Margin="205,180,0,0" VerticalAlignment="Top" Width="83" Grid.ColumnSpan="2" Grid.Column="1" Click="btnmultiplica_Click"/>
+        <Button x:Name="btndivision" Content="División" HorizontalAlignment="Left" Height="18" Margin="30,180,0,0" VerticalAlignment="Top" Width="46" Grid.Column="2" Grid.ColumnSpan="2" Click="btndivision_Click"/>
     </Grid>
 </Window>

@@ -6,12 +6,12 @@
         xmlns:local="clr-namespace:ProyectoPOO23030531"
         mc:Ignorable="d"
         Title="Prácticas de POO" Height="450" Width="800" WindowState="Maximized">
-    <Grid Background="#FFFBD8D8">
+    <Grid Background="#FFFBD8D8" HorizontalAlignment="Left" VerticalAlignment="Top">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="117*"/>
             <ColumnDefinition Width="43*"/>
         </Grid.ColumnDefinitions>
-        <Menu Margin="0,0,0,390" Background="White" Grid.ColumnSpan="2">
+        <Menu Background="White" Grid.ColumnSpan="2" Width="800" Height="21" VerticalAlignment="Top" HorizontalAlignment="Left">
             <MenuItem x:Name="miOpciones" Header="Opciones" Background="{x:Null}">
                 <MenuItem x:Name="miSumar" Header="Sumar" Click="miSumar_Click"/>
                 <MenuItem x:Name="miCalculadora_Constructores" Header="Calculadora Constructores"/>

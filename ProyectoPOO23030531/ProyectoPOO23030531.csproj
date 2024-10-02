@@ -56,6 +56,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Clases\clcategorías.cs" />
+    <Compile Include="Clases\clglobales.cs" />
     <Compile Include="Datos\frmcategorías.xaml.cs">
       <DependentUpon>frmcategorías.xaml</DependentUpon>
     </Compile>
@@ -118,6 +119,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Datos\lupa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Datos\jungwoo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Datos\guardar icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
