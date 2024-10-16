@@ -36,6 +36,13 @@ namespace ProyectoPOO23030531
             x.Show();
         }
 
+        private void miRegiones_Click(object sender, RoutedEventArgs e)
+        {
+                Datos.frmregiones x = new Datos.frmregiones();
+                x.Owner = this;
+                x.Show();
+        }
+
         private void miCategorías_Click(object sender, RoutedEventArgs e)
         {
             Datos.frmcategorías x = new Datos.frmcategorías();
@@ -43,5 +50,11 @@ namespace ProyectoPOO23030531
             x.Show();
         }
 
+        private void miPaqueteria_Click(object sender, RoutedEventArgs e)
+        {
+            Datos.frmpaqueteria x = new Datos.frmpaqueteria();
+            x.Owner = this;
+            x.Show();
+        }
     }
 }

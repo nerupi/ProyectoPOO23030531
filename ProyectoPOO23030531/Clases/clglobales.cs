@@ -15,8 +15,8 @@ namespace ProyectoPOO23030531.Clases
             static public string server = "LAPTOP-348QMSO7";
             static public string Password = "";
             static public string seguridad = "Integrated Security=True";
-            static public string UserID = "Administrador";
-            static public string miconexion = @"Data Source=DESKTOP-LUQE5QD\\SQLEXPRESS01;Initial Catalog=NORTHWIND;Integrated Security=True;Encrypt=True;TrustServerCertificate=True" + Password;
+            static public string UserID = "Administrador"; 
+            static public string miconexion = "Data Source=JOHANNA\\SQLEXPRESS;Initial Catalog=NORTHWIND;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
         }
     }
 }

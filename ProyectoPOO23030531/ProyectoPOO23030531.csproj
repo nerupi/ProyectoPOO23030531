@@ -37,6 +37,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -57,8 +58,18 @@
     </ApplicationDefinition>
     <Compile Include="Clases\clcategorías.cs" />
     <Compile Include="Clases\clglobales.cs" />
+    <Compile Include="Clases\conexion.cs" />
     <Compile Include="Datos\frmcategorías.xaml.cs">
       <DependentUpon>frmcategorías.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Datos\frmpaqueteria.xaml.cs">
+      <DependentUpon>frmpaqueteria.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Datos\frmregiones.xaml.cs">
+      <DependentUpon>frmregiones.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Datos\SearchForm.xaml.cs">
+      <DependentUpon>SearchForm.xaml</DependentUpon>
     </Compile>
     <Compile Include="Prácticas\wpfSuma.xaml.cs">
       <DependentUpon>wpfSuma.xaml</DependentUpon>
@@ -66,6 +77,18 @@
     <Page Include="Datos\frmcategorías.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Datos\frmpaqueteria.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Datos\frmregiones.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Datos\SearchForm.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>

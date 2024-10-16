@@ -20,6 +20,8 @@
             </MenuItem>
             <MenuItem x:Name="miDatos" Header="Datos">
                 <MenuItem x:Name="miCategorías" Header="Categorías" Click="miCategorías_Click"/>
+                <MenuItem x:Name="miRegiones" Header="Regiones" Click="miRegiones_Click" />
+                <MenuItem x:Name="miPaqueteria" Header="Paqueteria" Click="miPaqueteria_Click"/>
             </MenuItem>
             <MenuItem x:Name="miSalir1" Header="Salir" Click="miSalir1_Click"/>
         </Menu>

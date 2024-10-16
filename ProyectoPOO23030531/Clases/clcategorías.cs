@@ -43,7 +43,10 @@ namespace ProyectoPOO23030531.Clases
         
         } 
         // buscar todos
-
+        public string buscarTodos()
+        {
+            return ("Select * from categories");
+        }
         // modificar
 
         // eliminar

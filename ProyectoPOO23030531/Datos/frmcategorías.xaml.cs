@@ -26,25 +26,8 @@ namespace ProyectoPOO23030531.Datos
             InitializeComponent();
             cargarfolio();
         }
-        //private string miconexion = "Data Source=DESKTOP-LUQE5QD\\SQLEXPRESS01;Initial Catalog=NORTHWIND;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
-        private void cargarfolio()
-        {
-            string query = "SELECT MAX(CategoryID)+1 AS FOLIO FROM Categories;";
-            using (SqlConnection conn = new SqlConnection(Clases.clglobales.globales.miconexion))
-            {
-                SqlCommand cmd = new SqlCommand(query, conn);
-                conn.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
 
-                if (reader.Read() == true)
-                {
-                    // Asignar valores a las propiedades de la clase
-                    txtID.Text = reader["Folio"].ToString();
-                }
-                reader.Close();
-            }
-        }
-        private void btnbuscar_Click(object sender, RoutedEventArgs e)
+        public void buscar() 
         {
             string query = "SELECT * FROM Categories WHERE CategoryId = @CategoryId";
             using (SqlConnection conn = new SqlConnection(Clases.clglobales.globales.miconexion))
@@ -66,7 +49,38 @@ namespace ProyectoPOO23030531.Datos
                 reader.Close();
             }
         }
+        //private string miconexion = "Data Source=DESKTOP-LUQE5QD\\SQLEXPRESS01;Initial Catalog=NORTHWIND;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+        private void cargarfolio()
+        {
+            string query = "SELECT MAX(CategoryID)+1 AS FOLIO FROM Categories;";
+            using (SqlConnection conn = new SqlConnection(Clases.clglobales.globales.miconexion))
+            {
+                SqlCommand cmd = new SqlCommand(query, conn);
+                conn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
 
+                if (reader.Read() == true)
+                {
+                    // Asignar valores a las propiedades de la clase
+                    txtID.Text = reader["Folio"].ToString();
+                }
+                reader.Close();
+            }
+        }
+
+        private void btnbuscar_Click(object sender, RoutedEventArgs e)
+        {
+            Clases.clcategorías categ = new Clases.clcategorías();
+            Clases.conexion con = new Clases.conexion();
+            if(con.Execute(categ.buscarTodos(),0) == true) 
+            { 
+                if(con.FieldValue !="")
+                {
+                    txtID.Text = con.FieldValue;
+                    buscar();
+                }
+            }
+        }
         private void btngrabar_Click(object sender, RoutedEventArgs e)
         {
             string query = "SELECT * FROM Categories WHERE CategoryId = @CategoryId";
