@@ -42,13 +42,12 @@ namespace ProyectoPOO23030531.Datos
                 reader.Close();
             }
         }
-
-        private void btnbuscar_Click(object sender, RoutedEventArgs e)
+        private void buscar()
         {
             //string query = "SELECT * FROM Region WHERE RegionId = @RegionId";
             using (SqlConnection conn = new SqlConnection(Clases.clglobales.globales.miconexion))
             {
-                SqlCommand cmd = new SqlCommand("sp_busca_region", conn); 
+                SqlCommand cmd = new SqlCommand("spbuscarregion", conn);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@RegionId", txtID.Text);
 
@@ -66,6 +65,19 @@ namespace ProyectoPOO23030531.Datos
                 reader.Close();
             }
         }
+        private void btnbuscar_Click(object sender, RoutedEventArgs e)
+        {
+            Clases.Clregiones categ = new Clases.Clregiones();
+            Clases.conexion con = new Clases.conexion();
+            if (con.Execute(categ.buscarTodos(), 0) == true)
+            {
+                if (con.FieldValue != "")
+                {
+                    txtID.Text = con.FieldValue;
+                    buscar();
+                }
+            }
+        }
 
         private void btngrabar_Click(object sender, RoutedEventArgs e)
         {
@@ -74,11 +86,12 @@ namespace ProyectoPOO23030531.Datos
             //string querybuscar = "SELECT * FROM region WHERE RegionID = @RegionID";
             using (SqlConnection conn = new SqlConnection(Clases.clglobales.globales.miconexion))
             {
-                SqlCommand cmd = new SqlCommand("sp_busca_region", conn);
+
+                SqlCommand cmd = new SqlCommand("spbuscarregion", conn);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@RegionID", txtID.Text);
                 conn.Open();
                 SqlDataReader reader = cmd.ExecuteReader();
-
                 try
                 {
 
@@ -96,10 +109,11 @@ namespace ProyectoPOO23030531.Datos
                     else
                     {
                         //grabar
-                        SqlCommand cmdgrabar = new SqlCommand("sp_graba_region", conn);
+                        SqlCommand cmdgrabar = new SqlCommand("sp_grabar_region", conn);
                         cmdgrabar.CommandType = System.Data.CommandType.StoredProcedure;
                         cmdgrabar.Parameters.AddWithValue("@RegionID", txtID.Text);
                         cmdgrabar.Parameters.AddWithValue("@RegionDescription", txtDescripción.Text);
+                        reader.Close();
                         cmdgrabar.ExecuteNonQuery();
                         MessageBox.Show("Registro guardado correctamente");
                     }
@@ -109,6 +123,39 @@ namespace ProyectoPOO23030531.Datos
                 {
                     MessageBox.Show(ex.ToString());
                 }
+            }
+        }
+
+        private void btnbasura_Click(object sender, RoutedEventArgs e)
+        {
+            //Mostrar el cuadro de diálogo de confirmación en WPF
+            MessageBoxResult result = MessageBox.Show("Seguro de borrar el registro?", "Borrar", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+            // Verificar la respuesta del usuario
+            string queryborrar = "DELETE FROM Region WHERE RegionID = @RegionID";
+            using (SqlConnection conn = new SqlConnection(Clases.clglobales.globales.miconexion))
+            {
+                SqlCommand cmd = new SqlCommand(queryborrar, conn);
+                cmd.Parameters.AddWithValue("@RegionID", txtID.Text);
+                conn.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (result == MessageBoxResult.Yes)
+                {
+                    SqlCommand cmdborrar = new SqlCommand(queryborrar, conn);
+                    cmdborrar.Parameters.AddWithValue("@RegionID", txtID.Text);
+                    reader.Close();
+                    cmdborrar.ExecuteNonQuery();
+                    MessageBox.Show("Registro Borrado exitosamente!");
+                    txtDescripción.Clear();
+                    txtID.Clear();
+                    cargarfolio();
+                    txtID.Focus();
+                }
+                else
+                {
+                    // El usuario seleccionó "No".
+                    MessageBox.Show("Borrado de registro cancelado");
+                }
+                reader.Close();
             }
         }
     }

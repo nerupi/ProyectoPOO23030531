@@ -58,6 +58,8 @@
     </ApplicationDefinition>
     <Compile Include="Clases\clcategorías.cs" />
     <Compile Include="Clases\clglobales.cs" />
+    <Compile Include="Clases\Clpaqueteria.cs" />
+    <Compile Include="Clases\Clregiones.cs" />
     <Compile Include="Clases\conexion.cs" />
     <Compile Include="Datos\frmcategorías.xaml.cs">
       <DependentUpon>frmcategorías.xaml</DependentUpon>
@@ -148,6 +150,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Datos\guardar icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Datos\IMG-20240821-WA0049.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

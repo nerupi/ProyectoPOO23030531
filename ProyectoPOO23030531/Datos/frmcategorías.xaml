@@ -41,7 +41,11 @@
             </MenuItem>
             <MenuItem Header="Salir"/>
         </Menu>
-        <Image HorizontalAlignment="Left" Height="126" Margin="204,260,0,0" VerticalAlignment="Top" Width="158"/>
+        <Image x:Name="Imagen" HorizontalAlignment="Left" Height="100" Margin="204,260,0,0" VerticalAlignment="Top" Width="95" Source="/Datos/IMG-20240821-WA0049.jpg">
+            <Image.OpacityMask>
+                <ImageBrush ImageSource="/Datos/IMG-20240821-WA0049.jpg" TileMode="None"/>
+            </Image.OpacityMask>
+        </Image>
 
     </Grid>
 </Window>

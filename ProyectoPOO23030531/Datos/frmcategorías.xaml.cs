@@ -49,7 +49,7 @@ namespace ProyectoPOO23030531.Datos
                 reader.Close();
             }
         }
-        //private string miconexion = "Data Source=DESKTOP-LUQE5QD\\SQLEXPRESS01;Initial Catalog=NORTHWIND;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+        //private string miconexion = "Data Source=BOCCHI\sqlexpress04;Initial Catalog=NORTHWIND;Integrated Security=True;Encrypt=True;Trust Server Certificate=True";
         private void cargarfolio()
         {
             string query = "SELECT MAX(CategoryID)+1 AS FOLIO FROM Categories;";

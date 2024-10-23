@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static ProyectoPOO23030531.Clases.clglobales;
 using System.Windows;
+using System.Windows.Markup;
 
 namespace ProyectoPOO23030531.Clases
 {
@@ -22,14 +23,14 @@ namespace ProyectoPOO23030531.Clases
         {
 
             
-            miconexion = @"Data Source=DESKTOP-AHDQOKJ\SQLEXPRESS;Initial Catalog=NORTHWIND;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+            miconexion = @"Data Source=BOCCHI\\sqlexpress04;Initial Catalog=NORTHWIND;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
         }
 
         public conexion(string sentencia)
         {
 
             sentencia1 = sentencia;
-            miconexion = @"Data Source=DESKTOP-AHDQOKJ\SQLEXPRESS;Initial Catalog=NORTHWIND;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+            miconexion = @"Data Source = BOCCHI\\sqlexpress04; Initial Catalog = NORTHWIND; Integrated Security = True; Encrypt = True; TrustServerCertificate = True";
         }
         public string EJECUTAR()
         {

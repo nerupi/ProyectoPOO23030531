@@ -16,7 +16,7 @@ namespace ProyectoPOO23030531.Clases
             static public string Password = "";
             static public string seguridad = "Integrated Security=True";
             static public string UserID = "Administrador"; 
-            static public string miconexion = "Data Source=JOHANNA\\SQLEXPRESS;Initial Catalog=NORTHWIND;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
+            static public string miconexion = "Data Source=BOCCHI\\sqlexpress04;Initial Catalog=NORTHWIND;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
         }
     }
 }

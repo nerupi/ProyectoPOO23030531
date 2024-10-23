@@ -22,7 +22,7 @@
                     <ImageBrush ImageSource="/Datos/lupa.png"/>
                 </Button.Background>
             </Button>
-            <Button x:Name="btnbasura" Height="23" Width="25">
+            <Button x:Name="btnbasura" Height="23" Width="25" Click="btnbasura_Click">
                 <Button.Background>
                     <ImageBrush ImageSource="/Datos/basura.png"/>
                 </Button.Background>
